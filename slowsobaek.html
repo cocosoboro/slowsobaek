@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>느린소백 이용수칙 동의</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      -webkit-tap-highlight-color: transparent;
+    }
+    :root {
+      --primary: #322d28;         /* 느린소백 시그니처 흑갈색 */
+      --primary-dark: #201b18;
+      --primary-light: #f5f3f0;   /* 차분하고 정갈한 페일 베이지 */
+      --primary-pale: #eae6e1;    /* 부드러운 린넨 그레이 */
+      --cream: #FAF8F5;           /* 느린소백 시그니처 베이지 크림 배경 */
+      --white: #ffffff;
+      --text: #322d28;            /* 메인 텍스트 컬러 */
+      --text-muted: #7e746d;
+      --border: #e4ded7;
+      --accent: #a34835;          /* 아늑한 테라코타 벽돌색 포인트 */
+      --accent-light: #fdf2f0;
+      --shadow: 0 8px 30px rgba(50, 45, 40, 0.03);
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+    body { 
+      background: var(--cream); 
+      font-family: 'Noto Sans KR', sans-serif; 
+      color: var(--text); 
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    /* Header & Logo styling */
+    header { 
+      background: var(--white); 
+      padding: 44px 20px 32px; 
+      text-align: center; 
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+    }
+    .logo-container {
+      margin-bottom: 24px;
+      display: inline-block;
+      width: 100%;
+      max-width: 240px;
+    }
+    .logo-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    header p { 
+      font-family: 'Noto Sans KR', sans-serif; /* 본문 문장들과 동일한 고딕 폰트로 통일 */
+      font-size: 18px; 
+      font-weight: 500;
+      color: var(--text); 
+      letter-spacing: 0.12em; 
+      text-indent: 0.12em; /* 자간 정렬 보정 */
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .container { 
+      max-width: 600px; 
+      margin: 0 auto; 
+      padding: 24px 16px 140px; 
+    }
+
+    /* Intro Block */
+    .intro { 
+      background: var(--primary-light); 
+      border-left: 4px solid var(--primary); 
+      border-radius: 8px; 
+      padding: 20px; 
+      margin-bottom: 24px; 
+      font-size: 14.5px; 
+      line-height: 1.75; 
+      font-family: 'Gowun Batang', serif; /* 따뜻한 고운 바탕 서체 적용 */
+      color: var(--primary-dark);
+      box-shadow: var(--shadow-sm);
+    }
+    .intro strong {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* Section Agreement Cards */
+    .section { 
+      background: var(--white); 
+      border-radius: 12px; 
+      padding: 24px 20px; 
+      margin-bottom: 20px; 
+      border: 1px solid var(--border); 
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .section:hover {
+      border-color: #ced5d0;
+    }
+    .section-title { 
+      font-family: 'Gowun Batang', serif; /* 고운 바탕 서체 일치 */
+      font-size: 16px; 
+      font-weight: 700; 
+      color: var(--text); 
+      margin-bottom: 16px; 
+      padding-bottom: 12px; 
+      border-bottom: 1px solid var(--border); 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+      letter-spacing: -0.01em; /* 명조체 고유의 조형미를 위한 미세 자간 보정 */
+    }
+    .title-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge {
+      font-size: 10px; 
+      background: var(--accent); 
+      color: #fff; 
+      padding: 3px 8px; 
+      border-radius: 20px; 
+      font-family: 'Noto Sans KR', sans-serif; 
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .section ul { 
+      list-style: none; 
+      padding: 0; 
+    }
+    .section ul li { 
+      font-size: 13.5px; 
+      line-height: 1.6; /* 기존 1.8에서 1.6으로 줄 간격 축소 */
+      color: var(--text); 
+      padding: 3px 0 3px 20px; /* 기존 상하 6px 여백을 3px로 좁힘 */
+      position: relative; 
+    }
+    .section ul li::before { 
+      content: ''; 
+      position: absolute; 
+      left: 6px; 
+      top: 11px; /* 문장 높이가 줄어듦에 따라 원형 불릿의 상단 위치 보정 */
+      width: 4px; 
+      height: 4px; 
+      border-radius: 50%;
+      background-color: var(--primary); 
+    }
+    .section ul li .sub-detail {
+      display: block;
+      margin-top: 2px;
+      color: var(--text-muted);
+      font-size: 12.5px;
+    }
+
+    /* Fixed Confirmation Bottom Area */
+    .confirm-area { 
+      position: fixed; 
+      bottom: 0; 
+      left: 0; 
+      right: 0; 
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border); 
+      padding: 16px 20px 24px; 
+      text-align: center; 
+      z-index: 100;
+      box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.05);
+    }
+    .confirm-area p { 
+      font-size: 11px; 
+      color: var(--text-muted); 
+      margin-bottom: 8px; 
+      letter-spacing: 0.05em;
+    }
+    .confirm-wrapper {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    #confirmBtn { 
+      width: 100%; 
+      background: var(--primary); 
+      color: #fff; 
+      border: none; 
+      border-radius: 8px; 
+      padding: 16.5px; 
+      font-size: 15px; 
+      font-family: 'Noto Sans KR', sans-serif; 
+      font-weight: 700; 
+      cursor: pointer; 
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(50, 45, 40, 0.15);
+    }
+    #confirmBtn:hover { 
+      background: var(--primary-dark); 
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(50, 45, 40, 0.25);
+    }
+    #confirmBtn:active {
+      transform: translateY(1px);
+    }
+
+    /* Success Screen */
+    .success { 
+      display: none; 
+      position: fixed; 
+      inset: 0; 
+      background: var(--cream); 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      padding: 30px 20px; 
+      z-index: 200;
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .success-icon-container {
+      margin-bottom: 24px;
+    }
+    .success h2 { 
+      font-family: 'Gowun Batang', serif; /* 완료 타이틀도 고운 바탕 서체로 정갈하게 일치 */
+      font-size: 26px; 
+      color: var(--text); 
+      margin-bottom: 12px; 
+      font-weight: 700; 
+      letter-spacing: 0.02em;
+    }
+    .success p { 
+      font-size: 14px; 
+      color: var(--text-muted); 
+      line-height: 1.8; 
+      margin-bottom: 30px;
+    }
+    .success-info {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      width: 100%;
+      max-width: 380px;
+      text-align: left;
+      box-shadow: var(--shadow-sm);
+    }
+    .success-info-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--cream);
+    }
+    .success-info-row:last-child {
+      border-bottom: none;
+    }
+    .success-info-label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .success-info-value {
+      color: var(--text);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <svg class="logo-svg" width="2559" height="298" viewBox="0 0 2559 298" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_127_9030)">
+        <path d="M1689.78 19.0007C1690.56 41.2973 1683.19 63.2062 1670.78 81.4314C1670.78 82.013 1678.54 83.9518 1679.89 84.3396C1718.66 96.5543 1754.91 116.912 1783.8 145.219L1770.81 158.403C1766.54 154.913 1762.67 150.454 1758.4 146.77C1735.53 126.412 1703.93 104.697 1674.66 95.1971C1672.72 94.6155 1665.55 92.095 1664.19 92.095C1663.61 92.095 1663.22 92.095 1662.84 92.6766C1641.12 118.851 1612.63 139.209 1581.61 153.556C1579.67 154.526 1573.28 157.628 1571.73 157.822C1569.79 158.209 1565.14 151.811 1563.39 150.648C1578.7 144.638 1593.05 134.943 1606.23 124.861C1629.69 106.83 1663.61 72.3188 1667.29 41.4912C1668.46 32.3787 1662.25 26.756 1653.72 25.5927C1652.95 25.5927 1650.04 25.7866 1650.04 25.0111V18.8068H1690.17L1689.78 19.0007ZM1643.45 155.689V162.475C1651.2 162.087 1660.7 165.577 1663.22 173.526C1663.42 174.302 1664.19 177.21 1664.19 177.792V224.324C1637.63 224.906 1611.27 226.069 1584.71 226.263C1576.96 226.263 1559.51 227.232 1555.25 218.507C1554.86 217.732 1554.47 215.211 1554.47 215.211H1548.85V240.61C1562.03 240.029 1575.41 240.222 1588.78 239.835C1652.37 238.478 1715.95 235.763 1779.53 236.151L1802.79 238.09V220.64L1683.77 223.742V155.495H1643.64L1643.45 155.689ZM1001.03 0.581653V133.198C999.678 157.046 998.708 181.863 993.862 205.129C992.893 209.589 991.924 214.242 990.179 218.507H982.037V153.556C969.243 157.434 956.255 160.73 943.268 163.25C895.193 173.139 845.568 176.822 796.524 175.659V112.841C796.524 111.483 795.167 107.412 794.585 106.055C790.902 97.5237 782.179 95.391 773.456 95.5849V88.799L883.368 86.4723C888.796 72.1249 892.673 57.002 893.642 41.6851L783.73 42.8484V13.5719H790.127C789.739 21.3273 794.004 27.3377 801.952 28.501C805.635 29.0826 808.736 28.501 812.226 28.501C847.119 28.501 881.817 28.1132 916.71 27.7254C918.649 33.542 916.323 40.9096 914.578 46.7261C910.507 60.4919 903.916 73.8699 896.938 86.0846L915.547 83.5641V99.4626L815.909 101.789V160.148C819.592 160.148 823.469 160.148 827.152 160.148C853.322 160.924 879.685 159.373 905.661 156.658C931.637 153.944 957.031 149.679 982.037 142.699V27.7254C981.65 20.3578 980.099 15.123 973.702 11.2453C967.499 7.56148 960.714 7.3676 953.542 6.97983V0.581653H1001.23H1001.03ZM815.521 199.119V205.905C826.377 205.323 839.946 209.395 844.017 220.446C844.405 221.416 845.374 224.324 845.374 225.1V289.081H1007.63V271.244C1003.36 272.601 999.096 273.571 994.638 274.346C987.853 275.509 981.262 275.897 974.477 276.479H864.759V199.119H815.521ZM2559 0V105.667C2558.03 127.576 2556.48 149.872 2551.83 171.394C2551.24 174.496 2550.66 177.986 2549.31 180.894H2540V93.2583H2500.26C2500.26 119.045 2497.35 144.831 2491.15 169.843H2481.27V33.542C2481.27 33.542 2479.91 30.052 2479.71 29.4704C2475.84 21.3273 2462.27 19.0007 2454.32 19.0007V12.6025H2500.65V80.0742H2540V23.6539C2540 21.1334 2538.84 17.4496 2537.48 15.3169C2532.64 7.75537 2521.97 6.78595 2513.83 6.39818V0H2559ZM2444.82 30.8276H2395.97V37.6135C2405.47 36.838 2420.98 40.9096 2424.47 50.7977C2424.86 51.5732 2425.63 54.8692 2425.63 55.6448V88.799H2361.85V42.8484H2317.85V48.8588C2326.38 48.2772 2337.82 51.961 2341.11 60.6858C2341.31 61.2674 2342.47 64.9512 2342.47 65.339V168.291H2352.36C2353.52 164.802 2355.07 161.312 2355.46 157.628H2425.24V164.414H2435.13C2439.59 147.546 2425.5 130.484 2443.85 113.034C2444.24 108.381 2444.24 103.534 2444.63 98.8809C2445.4 76.3904 2444.05 53.7059 2444.63 31.2154L2444.82 30.8276ZM2425.82 144.25H2358.75C2360.89 130.29 2361.85 115.943 2361.85 101.789H2425.63V144.25H2425.82ZM2383.37 210.558L2533.6 205.711V298H2544.27C2545.62 286.561 2547.95 275.122 2549.31 263.682C2550.86 251.08 2551.44 237.896 2551.83 225.293C2552.02 214.048 2551.63 202.997 2551.83 191.751C2543.1 192.527 2534.19 192.333 2525.46 192.527C2495.22 193.303 2464.98 194.66 2434.55 195.241C2424.66 195.435 2414.58 196.211 2404.89 195.629C2397.72 195.241 2390.54 193.69 2383.37 193.303V210.364V210.558ZM59.1225 22.4906V133.005H187.45C194.235 132.423 200.826 132.423 207.611 131.26C211.488 130.678 215.752 130.29 219.048 127.77V145.607H39.7376V42.4606C39.7376 42.4606 38.3806 38.9707 37.9929 38.3891C35.0852 33.7358 24.8112 29.2765 19.3834 29.2765H12.7926V22.4906H59.1225ZM-0.00146353 215.211V240.61C8.91559 240.416 17.8326 240.61 26.7497 240.223C84.5167 238.865 142.284 237.12 200.051 236.345C215.171 236.151 230.097 236.345 245.217 237.508C248.125 237.702 251.033 238.284 253.747 238.671V221.222C214.008 221.804 174.656 223.548 134.917 223.936C104.483 225.1 73.855 225.681 43.2269 226.263C34.5037 226.263 25.5866 227.62 16.8634 225.293C11.8233 223.936 5.62016 221.222 5.42631 215.211H-0.195312H-0.00146353Z" fill="#322D28"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_127_9030">
+          <rect width="2559" height="298" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
+  </div>
+  <p>이용 및 안전수칙 확인 동의서</p>
+</header>
+
+<div class="container">
+  <div class="intro">
+    느린소백은 소백산국립공원 내에 위치한 숙소로 자연 속 조용한 쉼을 위한 공간입니다.<br>모든 투숙객의 안전하고 쾌적한 이용을 위해 아래 사항을 확인 후 동의해 주세요.
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="title-left">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text);"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <span>이용 안내</span>
+      </div>
+    </div>
+    <ul>
+      <li>체크인 15:00 / 체크아웃 11:00</li>
+      <li>예약 인원 외 방문객 동반 불가</li>
+      <li>객실 및 실내 전 구역 금연 (지정 흡연구역 이용)</li>
+      <li>실내 냄새·기름이 강한 조리 제한</li>
+      <li>밤 10시 이후 매너타임 운영</li>
+      <li>쓰레기 분리배출 필수 (재활용 / 일반 / 음식물)</li>
+      <li>시설 보호를 위해 CCTV 운영 중</li>
+    </ul>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="title-left">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text);"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+        <span>바베큐 & 불멍</span>
+      </div>
+    </div>
+    <ul>
+      <li>개인 화기(숯, 그릴, 장작, 전열기구) 반입 불가</li>
+      <li>지정 장소 외 화기 사용 금지</li>
+      <li>불멍은 자정(00:00)까지 이용 가능</li>
+      <li>기상 악화 시 이용 제한될 수 있음</li>
+      <li>장작 외 서류, 박스 등 기타 물품 소각 금지</li>
+    </ul>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="title-left">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text);"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>시설 안내</span>
+      </div>
+    </div>
+    <ul>
+      <li>주방·욕실 물은 식음 적합 판정 지하수 사용</li>
+      <li>온수는 잠시 기다리면 따뜻하게 공급됨</li>
+      <li>사우나는 사전 예약제 운영<span class="sub-detail">(오일·솔트 등 오염물질 사용 불가 / 객실 내 비치된 샤워가운 착용 필수)</span></li>
+      <li>계곡 쓰레기 투기 및 일몰 후 입수 금지</li>
+      <li>자연환경 특성상 벌레·곤충 등 유입될 수 있으며, 이로 인한 환불 불가</li>
+    </ul>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="title-left">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text);"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>안전 및 책임</span>
+        <span class="badge" style="margin-left: 8px;">필독</span>
+      </div>
+    </div>
+    <ul>
+      <li>숙소·야외시설 등 이용 중 안전사고에 각별히 유의 요망</li>
+      <li>산·계곡·화기·야외시설 등 이용 중 발생하는 사고의 책임은 이용자 본인에게 있음</li>
+      <li>이용수칙 미준수로 인한 사고, 화재, 분실, 민원 등에 대해 숙소 책임 없음</li>
+      <li>귀중품 분실 및 개인 부주의로 인한 사고에 대해 숙소 책임 없음</li>
+      <li>미끄러짐, 화상, 음주 후 부주의 등 개인 과실 사고에 대해 숙소 책임 없음</li>
+      <li>보호자 동반 아동의 안전사고 책임은 보호자에게 있음</li>
+      <li>비품·시설 파손, 침구 심한 오염, 화기 부주의 등으로 인한 손해 발생 시 배상 비용 청구될 수 있음</li>
+      <li>수칙 위반 또는 타 투숙객 피해 행위 시 환불 없이 퇴실 조치될 수 있음</li>
+      <li>천재지변, 폭우, 강풍, 정전 등 불가항력적 상황으로 인한 이용 제한에 대해 숙소 책임 없음</li>
+      <li>예약자는 동반 투숙객에게 이용수칙 안내 책임이 있으며, 동반인 행위에 대해서도 동일한 책임을 짐</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- Bottom Sticky Action Bar -->
+<div class="confirm-area">
+  <div class="confirm-wrapper">
+    <p>상기 기재된 이용 및 안전수칙 확인 동의서 규정을 모두 준수할 것을 약속합니다.</p>
+    <button id="confirmBtn" onclick="sendConfirmation()">동의하고 확인했습니다</button>
+  </div>
+</div>
+
+<!-- Beautiful Success Layout Screen -->
+<div class="success" id="successScreen">
+  <div class="success-icon-container">
+    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="42" cy="42" r="40" fill="#f5f3f0" stroke="#322d28" stroke-width="1.5" />
+      <circle cx="42" cy="42" r="34" fill="#322d28" />
+      <path d="M30 43L38 51L54 33" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <h2>동의서 제출 완료</h2>
+  <p>이용 및 안전수칙 확인 동의서가 안전하게 제출 처리되었습니다.<br>느린소백에서 편안한 시간 보내시길 바랍니다.</p>
+  
+  <div class="success-info">
+    <div class="success-info-row">
+      <span class="success-info-label">투숙객 성함</span>
+      <span class="success-info-value" id="successName">-</span>
+    </div>
+    <div class="success-info-row">
+      <span class="success-info-label">연락처 정보</span>
+      <span class="success-info-value" id="successPhone">-</span>
+    </div>
+    <div class="success-info-row">
+      <span class="success-info-label">제출 일시</span>
+      <span class="success-info-value" id="successTime">-</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const WEBHOOK_URL = 'https://hook.us2.make.com/eiw5bd57sa9auffeo6nugl7rg38lgi43';
+  let guestInfo = { name: '', phone: '' };
+
+  window.addEventListener('load', () => {
+    // URL 파라미터 백그라운드 매핑
+    initQueryParams();
+  });
+
+  // URL에서 예약자 정보 획득
+  function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      phone: params.get('phone') || '',
+      name: params.get('name') || ''
+    };
+  }
+
+  function initQueryParams() {
+    const { name, phone } = getQueryParams();
+    guestInfo.name = name;
+    guestInfo.phone = phone;
+  }
+
+  // Webhook submission & Form completed layout activation
+  async function sendConfirmation() {
+    const btn = document.getElementById('confirmBtn');
+    btn.disabled = true;
+    btn.textContent = '제출 전송 중...';
+
+    const { name, phone } = guestInfo;
+    
+    // Build dynamic webhook search params
+    const queryParams = new URLSearchParams();
+    queryParams.append('phone', phone);
+    queryParams.append('name', name);
+    queryParams.append('agreed', 'true');
+    queryParams.append('timestamp', new Date().toISOString());
+
+    try {
+      // Execute fast fetch GET call to Make Webhook
+      await fetch(`${WEBHOOK_URL}?${queryParams.toString()}`, { 
+        method: 'GET', 
+        mode: 'no-cors' 
+      });
+    } catch (e) {
+      console.warn("Webhook background fetch finished.");
+    }
+
+    // Populate Success Screen data layout
+    document.getElementById('successName').textContent = name || '확인용 성함 없음';
+    document.getElementById('successPhone').textContent = phone ? maskPhoneNumber(phone) : '번호 없음';
+    document.getElementById('successTime').textContent = getFormattedCurrentTime();
+
+    // Show Success block smoothly
+    document.getElementById('successScreen').style.display = 'flex';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function maskPhoneNumber(num) {
+    if (num.length <= 4) return num;
+    return num.slice(0, -4).replace(/\d/g, '*') + num.slice(-4);
+  }
+
+  function getFormattedCurrentTime() {
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    const hh = String(now.getHours()).padStart(2, '0');
+    const min = String(now.getMinutes()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd} ${hh}:${min}`;
+  }
+</script>
+</body>
+</html>
