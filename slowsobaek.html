@@ -341,7 +341,7 @@
     <ul>
       <li>주방·욕실 물은 식음 적합 판정 지하수 사용</li>
       <li>온수는 잠시 기다리면 따뜻하게 공급됨</li>
-      <li>사우나는 사전 예약제 운영<span class="sub-detail">(오일·솔트 등 오염물질 사용 불가 / 객실 내 비치된 샤워가운 착용 필수)</span></li>
+      <li>사우나는 사전 예약제 운영 (오일·솔트 등 오염물질 사용 불가 / 객실 내 비치된 샤워가운 착용 필수)</li>
       <li>계곡 쓰레기 투기 및 일몰 후 입수 금지</li>
       <li>자연환경 특성상 벌레·곤충 등 유입될 수 있으며, 이로 인한 환불 불가</li>
     </ul>
@@ -445,7 +445,8 @@
     queryParams.append('phone', phone);
     queryParams.append('name', name);
     queryParams.append('agreed', 'true');
-    queryParams.append('timestamp', new Date().toISOString());
+    const kst = new Date(new Date().getTime() + 9 * 60 * 60 * 1000);
+queryParams.append('timestamp', kst.toISOString().replace('Z', '+09:00'));
 
     try {
       // Execute fast fetch GET call to Make Webhook
@@ -473,14 +474,15 @@
   }
 
   function getFormattedCurrentTime() {
-    const now = new Date();
-    const yyyy = now.getFullYear();
-    const mm = String(now.getMonth() + 1).padStart(2, '0');
-    const dd = String(now.getDate()).padStart(2, '0');
-    const hh = String(now.getHours()).padStart(2, '0');
-    const min = String(now.getMinutes()).padStart(2, '0');
-    return `${yyyy}-${mm}-${dd} ${hh}:${min}`;
+  const kst = new Date(new Date().getTime() + 9 * 60 * 60 * 1000);
+  const yyyy = kst.getUTCFullYear();
+  const mm = String(kst.getUTCMonth() + 1).padStart(2, '0');
+  const dd = String(kst.getUTCDate()).padStart(2, '0');
+  const hh = String(kst.getUTCHours()).padStart(2, '0');
+  const min = String(kst.getUTCMinutes()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd} ${hh}:${min} KST`;
   }
+  
 </script>
 </body>
 </html>
